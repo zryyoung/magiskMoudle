@@ -1,0 +1,24 @@
+#!/system/bin/sh
+
+TeamS=${0%/*}
+chmod -R 755 "$TeamS"
+cd "$TeamS/bin" && export PATH="$PATH"
+# Wait for boot delay loading
+sleep 15s
+	#Run script program
+	awk 'BEGIN {
+	i=0;
+	do {
+		cmd=system("pgrep activity_diaodu.rc")
+		if (cmd=="0")
+		{
+		} else {
+			system("'$PWD/activity_diaodu.rc' ")
+		}
+		system("sleep 15")
+		i = i + 1
+	}
+	while (i)
+	exit 0
+}'
+fi

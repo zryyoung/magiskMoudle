@@ -1,0 +1,59 @@
+#!/system/bin/sh
+TeamS=${0%/*}
+
+# 初始化策略编号数组
+policy_numbers=()
+
+# 遍历可能的策略编号（0到7）
+for i in $(seq 0 7); do
+    # 检查策略目录是否存在
+    if [ -d "/sys/devices/system/cpu/cpufreq/policy$i" ]; then
+        # 如果存在，添加到策略编号数组
+        policy_numbers+=("$i")
+    fi
+done
+
+# 假设至少有一个策略存在
+if [ ${#policy_numbers[@]} -ge 1 ]; then
+    P0="${policy_numbers[0]}"
+fi
+
+# 如果有第二个策略
+if [ ${#policy_numbers[@]} -ge 2 ]; then
+    P1="${policy_numbers[1]}"
+    # 检查第二个策略编号是否小于7
+    if [ "$P2" -lt "7" ]; then
+        # 如果P2小于7，输出为"6+2"
+        CPU="6+2"
+    fi
+fi
+
+if [ ${#policy_numbers[@]} -ge 3 ]; then
+	P2="${policy_numbers[2]}"
+	if [ "$P2" -ge "7" ]; then
+		P2NUM=$(expr $P2 - $P1)
+		CPU="$P1+$P2NUM+1"
+	else
+		P2NUM=$(expr $P2 - $P1)
+	fi
+fi
+
+if [ ${#policy_numbers[@]} -ge 4 ]; then
+	P3="${policy_numbers[3]}"
+	if [ "$P3" -ge "7" ]; then
+		P3NUM=$(expr $P3 - $P2)
+		CPU="$P1+$P2NUM+$P3NUM+1"
+	else
+		P3NUM=$(expr $P3 - $P2)
+	fi
+fi
+
+if [[ $CPU == "2+3+2+1" ]]; then
+	/system/bin/sh "$TeamS/tool/CPU2+3+2+1.sh"
+elif [[ $CPU == "3+4+1" ]]; then
+	/system/bin/sh "$TeamS/tool/CPU3+4+1.sh"
+elif [[ $CPU == "4+3+1" ]]; then
+	/system/bin/sh "$TeamS/tool/CPU4+3+1.sh"
+elif [[ $CPU == "6+2" ]]; then
+	/system/bin/sh "$TeamS/tool/CPU6+2.sh"
+fi

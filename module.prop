@@ -1,0 +1,7 @@
+id=muronggameopt
+name=ColorOS官调优化
+version=6.2
+versionCode=62
+author=慕容茹艳（酷安慕容雪绒）
+description=优化8GEN3和8Elite处理器ColorOS15游戏帧率表现和日用功耗
+updateJson=https://raw.githubusercontent.com/zryyoung/magiskMoudle/main/update.json
