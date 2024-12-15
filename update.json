@@ -2,5 +2,5 @@
   "version": "6.2",
   "versionCode": 63,
   "zipUrl": "https://github.com/zryyoung/magiskMoudle/releases/download/v6.3/magiskMoudle6.3.zip",
-  "changelog": "Initial release of the module"
+  "changelog": "优化8GEN3和8Elite处理器ColorOS15游戏帧率表现和日用功耗"
 }	
