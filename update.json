@@ -2,5 +2,5 @@
   "version": "6.3",
   "versionCode": 63,
   "zipUrl": "https://github.com/zryyoung/magiskMoudle/releases/download/v6.3/magiskMoudle6.3.zip",
-  "changelog": "## 更新日志\n- 修复性能问题\n- 优化兼容性\n- 支持新版本 ColorOS"
-}	
+  "changelog": "https://raw.githubusercontent.com/zryyoung/magiskMoudle/main/changeLog.md"
+}
