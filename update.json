@@ -2,5 +2,5 @@
   "version": "6.3",
   "versionCode": 63,
   "zipUrl": "https://github.com/zryyoung/magiskMoudle/releases/download/v6.3/magiskMoudle6.3.zip",
-  "changelog": "1. 优化性能\n2. 修复已知问题\n3. 增加 ColorOS 15 支持\n4. 优化8GEN3和8Elite处理器ColorOS15游戏帧率表现和日用功耗"
+  "changelog": "## 更新日志\n- 修复性能问题\n- 优化兼容性\n- 支持新版本 ColorOS"
 }	
